@@ -1,0 +1,8 @@
+uuid: 20cafc20-516f-482a-bd6f-9cf17f66f2f4
+langcode: en
+status: true
+dependencies: {  }
+name: Género
+vid: genero
+description: ''
+weight: 0
