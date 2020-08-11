@@ -1,0 +1,227 @@
+uuid: d15c2a2d-543d-4caa-9ed8-873e787ea44e
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: form_caso01
+title: 'Caso 01'
+description: ''
+category: ''
+elements: "informacion_personal:\n  '#type': webform_wizard_page\n  '#title': 'Información personal'\n  nombre:\n    '#type': textfield\n    '#title': Nombre\n    '#required': true\n  apellido:\n    '#type': textfield\n    '#title': Apellido\n    '#required': true\n  telefono:\n    '#type': tel\n    '#title': Teléfono\n    '#required': true\n  correo_electronico:\n    '#type': email\n    '#title': 'Correo Electrónico'\n    '#required': true\n  direccion:\n    '#type': webform_address\n    '#title': Dirección\n    '#address__title': Dirección\n    '#address_2__access': false\n    '#city__title': Ciudad\n    '#state_province__title': Provincia\n    '#postal_code__title': 'Código postal'\n    '#country__title': País\n    '#required': true\n  sexo:\n    '#type': select\n    '#title': Sexo\n    '#options':\n      Masculino: Masculino\n      Femenino: Femenino\n    '#required': true\nexperiencia_laboral_page:\n  '#type': webform_wizard_page\n  '#title': 'Experiencia laboral'\n  bio:\n    '#type': text_format\n    '#title': Bio\n    '#allowed_formats':\n      plain_text: plain_text\n    '#required': true\n  experiencia_laboral:\n    '#type': webform_custom_composite\n    '#title': 'Experiencia Laboral'\n    '#element':\n      - '#type': textfield\n        '#title': 'Nombre de la Institución'\n      - '#type': date\n        '#title': 'Fecha Inicio'\n      - '#type': date\n        '#title': 'Fecha Fin'\n    '#required': true\ninformacion_de_la_aplicacion:\n  '#type': webform_wizard_page\n  '#title': 'Información de la aplicación'\n  puesto_al_que_aplica:\n    '#type': webform_term_select\n    '#title': 'Puesto al que aplica'\n    '#vocabulary': puestos\n    '#breadcrumb_delimiter': ''\n    '#required': true\n  cv:\n    '#type': webform_document_file\n    '#title': CV\n    '#file_help': none\n    '#max_filesize': '10'\n    '#required': true\n  cover_letter:\n    '#type': webform_document_file\n    '#title': 'Cover letter'\n    '#file_help': none\n    '#max_filesize': '10'\n    '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Enviar"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: true
+  autofill_message: ''
+  autofill_excluded_elements:
+    puesto_al_que_aplica: puesto_al_que_aplica
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: all
+  draft_multiple: true
+  draft_auto_save: true
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: draft
+  purge_days: 5
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: 'Caso 01'
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:correo_electronico:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:nombre:raw]'
+      subject: 'Hola [webform_submission:values:nombre] [webform_submission:values:apellido]'
+      body: Test
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
+variants: {  }
