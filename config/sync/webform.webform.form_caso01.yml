@@ -144,9 +144,12 @@ settings:
 access:
   create:
     roles:
+      - anonymous
       - authenticated
+      - administrator
     users: {  }
-    permissions: {  }
+    permissions:
+      - 'administer antibot configuration'
   view_any:
     roles: {  }
     users: {  }
