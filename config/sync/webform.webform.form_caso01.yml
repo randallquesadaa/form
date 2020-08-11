@@ -12,7 +12,7 @@ id: form_caso01
 title: 'Caso 01'
 description: ''
 category: ''
-elements: "informacion_personal:\n  '#type': webform_wizard_page\n  '#title': 'Información personal'\n  nombre:\n    '#type': textfield\n    '#title': Nombre\n  apellido:\n    '#type': textfield\n    '#title': Apellido\n  telefono:\n    '#type': tel\n    '#title': Teléfono\n  correo_electronico:\n    '#type': email\n    '#title': 'Correo Electrónico'\n  direccion:\n    '#type': webform_address\n    '#title': Dirección\n    '#address__title': Dirección\n    '#address_2__access': false\n    '#city__title': Ciudad\n    '#state_province__title': Provincia\n    '#postal_code__title': 'Código postal'\n    '#country__title': País\n  sexo:\n    '#type': webform_term_select\n    '#title': Sexo\n    '#vocabulary': genero\n    '#breadcrumb_delimiter': ''\nexperiencia_laboral_page:\n  '#type': webform_wizard_page\n  '#title': 'Experiencia laboral'\n  bio:\n    '#type': text_format\n    '#title': Bio\n    '#allowed_formats':\n      plain_text: plain_text\n  experiencia_laboral:\n    '#type': webform_custom_composite\n    '#title': 'Experiencia Laboral'\n    '#element':\n      - '#type': textfield\n        '#title': 'Nombre de la Institución'\n      - '#type': date\n        '#title': 'Fecha Inicio'\n      - '#type': date\n        '#title': 'Fecha Fin'\ninformacion_de_la_aplicacion:\n  '#type': webform_wizard_page\n  '#title': 'Información de la aplicación'\n  puesto_al_que_aplica:\n    '#type': webform_term_select\n    '#title': 'Puesto al que aplica'\n    '#vocabulary': puestos\n    '#breadcrumb_delimiter': ''\n  cv:\n    '#type': webform_document_file\n    '#title': CV\n    '#file_help': none\n    '#max_filesize': '10'\n  cover_letter:\n    '#type': webform_document_file\n    '#title': 'Cover letter'\n    '#file_help': none\n    '#max_filesize': '10'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Enviar"
+elements: "informacion_personal:\n  '#type': webform_wizard_page\n  '#title': 'Información personal'\n  nombre:\n    '#type': textfield\n    '#title': Nombre\n    '#required': true\n  apellido:\n    '#type': textfield\n    '#title': Apellido\n    '#required': true\n  telefono:\n    '#type': tel\n    '#title': Teléfono\n    '#required': true\n  correo_electronico:\n    '#type': email\n    '#title': 'Correo Electrónico'\n    '#required': true\n  direccion:\n    '#type': webform_address\n    '#title': Dirección\n    '#address__title': Dirección\n    '#address_2__access': false\n    '#city__title': Ciudad\n    '#state_province__title': Provincia\n    '#postal_code__title': 'Código postal'\n    '#country__title': País\n    '#required': true\n  sexo:\n    '#type': select\n    '#title': Sexo\n    '#options':\n      Masculino: Masculino\n      Femenino: Femenino\n    '#required': true\nexperiencia_laboral_page:\n  '#type': webform_wizard_page\n  '#title': 'Experiencia laboral'\n  bio:\n    '#type': text_format\n    '#title': Bio\n    '#allowed_formats':\n      plain_text: plain_text\n    '#required': true\n  experiencia_laboral:\n    '#type': webform_custom_composite\n    '#title': 'Experiencia Laboral'\n    '#element':\n      - '#type': textfield\n        '#title': 'Nombre de la Institución'\n      - '#type': date\n        '#title': 'Fecha Inicio'\n      - '#type': date\n        '#title': 'Fecha Fin'\n    '#required': true\ninformacion_de_la_aplicacion:\n  '#type': webform_wizard_page\n  '#title': 'Información de la aplicación'\n  puesto_al_que_aplica:\n    '#type': webform_term_select\n    '#title': 'Puesto al que aplica'\n    '#vocabulary': puestos\n    '#breadcrumb_delimiter': ''\n    '#required': true\n  cv:\n    '#type': webform_document_file\n    '#title': CV\n    '#file_help': none\n    '#max_filesize': '10'\n    '#required': true\n  cover_letter:\n    '#type': webform_document_file\n    '#title': 'Cover letter'\n    '#file_help': none\n    '#max_filesize': '10'\n    '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Enviar"
 css: ''
 javascript: ''
 settings:
@@ -30,7 +30,7 @@ settings:
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_remote_addr: true
@@ -76,9 +76,10 @@ settings:
   submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
-  autofill: false
+  autofill: true
   autofill_message: ''
-  autofill_excluded_elements: {  }
+  autofill_excluded_elements:
+    puesto_al_que_aplica: puesto_al_que_aplica
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -103,9 +104,9 @@ settings:
   preview_excluded_elements: {  }
   preview_exclude_empty: true
   preview_exclude_empty_checkbox: false
-  draft: none
-  draft_multiple: false
-  draft_auto_save: false
+  draft: all
+  draft_multiple: true
+  draft_auto_save: true
   draft_saved_message: ''
   draft_loaded_message: ''
   draft_pending_single_message: ''
@@ -133,8 +134,8 @@ settings:
   entity_limit_total_interval: null
   entity_limit_user: null
   entity_limit_user_interval: null
-  purge: none
-  purge_days: null
+  purge: draft
+  purge_days: 5
   results_disabled: false
   results_disabled_ignore: false
   results_customize: false
