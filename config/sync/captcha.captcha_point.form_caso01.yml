@@ -1,0 +1,7 @@
+uuid: 3a9dc259-ba9c-420f-8653-c2abd0f3da86
+langcode: en
+status: true
+dependencies: {  }
+formId: form_caso01
+captchaType: recaptcha/reCAPTCHA
+label: form_caso01

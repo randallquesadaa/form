@@ -195,6 +195,8 @@ langcode: en
 third_party_settings:
   antibot:
     antibot: true
+  captcha:
+    replace_administration_mode: true
   honeypot:
     time_restriction: true
 _core:
